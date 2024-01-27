@@ -50,11 +50,12 @@ Usar essa arquitetura lhe oferece algumas vantagens, como:
 
 Consulte os exemplos presentes na pasta [examples](/src/examples/)!
 
-Sumario:
+Exemplos:
 
 - `normal/`: Jeito convencional de se criar um componente
 - `isa-with-context/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React (Context API)
 - `isa-with-context-and-reducer/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React (Context API + useReducer)
+- `isa-with-zustand`: Usando a arquitetura I.S.A junto da biblitoeca [Zustand](https://zustand-demo.pmnd.rs/)
 
 #### Uma dose de realidade
 
