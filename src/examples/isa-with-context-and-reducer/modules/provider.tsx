@@ -7,7 +7,7 @@ import { PostsStatesProvider } from "./states";
 
 // #endregion
 
-export function PostsProviders({ children }: GenericContextProps) {
+export function PostsProvider({ children }: GenericContextProps) {
   return (
     <PostsStatesProvider>
       <PostsActionsProvider>{children}</PostsActionsProvider>
