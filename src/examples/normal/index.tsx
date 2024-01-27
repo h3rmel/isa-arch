@@ -1,17 +1,22 @@
+// #region Imports
+
 import { useEffect, useState } from "react";
 
-import { api } from "@/services/api";
 import { AxiosError } from "axios";
 
-interface IPost {
+import { api } from "@/services/api";
+
+// #endregion
+
+type Post = {
   id: number;
   title: string;
   body: string;
   userId: number;
-}
+};
 
 export function Posts() {
-  const [posts, setPosts] = useState<IPost[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   async function getPosts() {
@@ -44,7 +49,7 @@ export function Posts() {
     <>
       {!isLoading ? (
         <section className="flex flex-col items-center gap-4">
-          {posts.map((post) => (
+          {posts.map((post: Post) => (
             <article key={post.id} className="card w-96 bg-base-100 shadow-xl">
               <div className="card-body">
                 <h2 className="card-title">{post.title}</h2>

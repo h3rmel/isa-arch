@@ -1,26 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// #region Imports
-
-import { useEffect } from "react";
-
 import { Post, usePostsStates } from "./states";
-import { usePostsActions } from "./actions";
-
-// #endregion
 
 export function PostsView() {
   const { isLoading, posts } = usePostsStates();
-  const { getPosts } = usePostsActions();
-
-  useEffect(() => {
-    const abortController = new AbortController();
-
-    getPosts(abortController);
-
-    return () => {
-      abortController.abort();
-    };
-  }, []);
 
   return (
     <>

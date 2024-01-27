@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-refresh/only-export-components */
 // #region Imports
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 
 import { AxiosError } from "axios";
 
@@ -12,13 +13,7 @@ import { Post, PostsStatesContext } from "./states";
 
 // #endregion
 
-export interface PostsActionsContextProps {
-  getPosts: (abort: AbortController) => Promise<void>;
-}
-
-export const PostsActionsContext = createContext<PostsActionsContextProps>(
-  {} as PostsActionsContextProps
-);
+export const PostsActionsContext = createContext({});
 
 export function PostsActionsProvider({ children }: GenericContextProps) {
   const { setIsLoading, setPosts } = useContext(PostsStatesContext);
@@ -52,9 +47,17 @@ export function PostsActionsProvider({ children }: GenericContextProps) {
     }
   }
 
-  const providerValue: PostsActionsContextProps = {
-    getPosts,
-  };
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    getPosts(abortController);
+
+    return () => {
+      abortController.abort();
+    };
+  }, []);
+
+  const providerValue = {};
 
   return (
     <PostsActionsContext.Provider value={providerValue}>
@@ -67,7 +70,9 @@ export function usePostsActions() {
   const context = useContext(PostsActionsContext);
 
   if (!context)
-    throw new Error("usePostsActions must be used within a PostsActionsProvider");
+    throw new Error(
+      "usePostsActions must be used within a PostsActionsProvider"
+    );
 
   return context;
 }
