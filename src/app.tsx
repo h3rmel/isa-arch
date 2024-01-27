@@ -1,4 +1,4 @@
-import { PostsView, PostsProviders } from "@/examples/posts-isa";
+import { PostsView, PostsProviders } from "@/examples/posts-isa-with-context";
 
 export function App() {
   return (

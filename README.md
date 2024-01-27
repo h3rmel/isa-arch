@@ -52,9 +52,8 @@ Consulte os exemplos presentes na pasta [examples](/src/examples/)!
 
 Sumario:
 
-- `posts/`: Jeito convencional de se criar um componente
-- `posts-isa/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React
-- `posts-zustand/`: Utilizando a arquitetura I.S.A junto da ferramenta Zustand
+- `posts-normal/`: Jeito convencional de se criar um componente
+- `posts-isa-with-context/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React
 
 #### Uma dose de realidade
 
