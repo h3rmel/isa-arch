@@ -14,7 +14,7 @@
   <tr>
     <td>
       <strong>
-        <a href="README-EN.md">English</a>
+        <a href="README-EN.md">Inglês</a>
       </strong>
     </td>
   </tr>
@@ -24,19 +24,19 @@ O React I.S.A é uma arquitetura para React que separa o código em três camada
 
 Com isso, se torna mais fácil a organização do código e sua manutenção. Vamos explicar um pouco mais sobre cada camada (apesar de ser bem intuitivo):
 
-<h4>Interface</h4>
+#### Interface
 
-A camada <strong>Interface</strong> é responsável por renderizar a interface do usuário (UI). Sendo composta por tudo que representa os elementos visuais da aplicação.
+A camada **Interface** é responsável por renderizar a interface do usuário (UI). Sendo composta por tudo que representa os elementos visuais da aplicação.
 
-<h4>Estados</h4>
+#### Estados
 
-A camada <strong>Estados</strong> é responsável por armazenar os dados da aplicação. Sendo composto por classes React ou estados gerenciados via Context API, Reducers e bibliotecas como o Zustand.
+A camada **Estados** é responsável por armazenar os dados da aplicação. Sendo composto por classes React ou estados gerenciados via Context API, Reducers e bibliotecas como o Zustand.
 
-<h4>Ações</h4>
+#### Ações
 
-A camada <strong>Ações</strong> é responsável por realizar as alterações nos estados da aplicação. Ela é basicamente composta por funções que fazem algo: disparam eventos, validam formulários, alteram o valor de um estado, etc.
+A camada **Ações** é responsável por realizar as alterações nos estados da aplicação. Ela é basicamente composta por funções que fazem algo: disparam eventos, validam formulários, alteram o valor de um estado, etc.
 
-<h3>Por que o React I.S.A?</h3>
+### Por que o React I.S.A?
 
 Usar essa arquitetura lhe oferece algumas vantagens, como:
 
@@ -46,7 +46,7 @@ Usar essa arquitetura lhe oferece algumas vantagens, como:
 
 - Testabilidade: O código fica mais fácil de testar, pois cada camada pode ser testada separadamente.
 
-<h4>Usando o React I.S.A</h4>
+#### Usando o React I.S.A
 
 Consulte os exemplos presentes na pasta [examples](/src/examples/)!
 
@@ -56,7 +56,7 @@ Sumario:
 - `posts-isa/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React
 - `posts-zustand/`: Utilizando a arquitetura I.S.A junto da ferramenta Zustand
 
-<h4>Uma dose de realidade</h4>
+#### Uma dose de realidade
 
 A verdade é que aplicar essa arquitetura em um código simples pode deixa-lô bastante complicado sem necessidades, portanto essa arquitetura é pensada e recomendada para features maiores e mais robustas.
 
