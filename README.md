@@ -52,8 +52,9 @@ Consulte os exemplos presentes na pasta [examples](/src/examples/)!
 
 Sumario:
 
-- `posts-normal/`: Jeito convencional de se criar um componente
-- `posts-isa-with-context/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React
+- `normal/`: Jeito convencional de se criar um componente
+- `isa-with-context/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React (Context API)
+- `isa-with-context-and-reducer/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React (Context API + useReducer)
 
 #### Uma dose de realidade
 
