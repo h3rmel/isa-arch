@@ -1,5 +1,4 @@
-import { PostsView } from "./features/posts-isa/interface";
-import { PostsProviders } from "./features/posts-isa/provider";
+import { PostsView, PostsProviders } from "@/examples/posts-isa";
 
 export function App() {
   return (
