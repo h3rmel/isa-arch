@@ -1,10 +1,10 @@
 // #region Imports
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { AxiosError } from "axios";
+import { AxiosError } from 'axios';
 
-import { api } from "@/services/api";
+import { api } from '@/services/api';
 
 // #endregion
 
@@ -19,14 +19,16 @@ export function Posts() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  async function getPosts() {
+  async function getPosts(abort: AbortController) {
     setIsLoading(true);
 
     try {
-      const { data } = await api.get("posts/");
+      const { data } = await api.get('posts/', { signal: abort.signal });
 
       setPosts(data);
     } catch (error) {
+      if (abort.signal.aborted) console.log('The user aborted the request.');
+      
       const axiosError = error as AxiosError;
 
       if (axiosError)
@@ -42,7 +44,13 @@ export function Posts() {
   }
 
   useEffect(() => {
-    getPosts();
+    const abortController = new AbortController();
+
+    getPosts(abortController);
+
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   return (

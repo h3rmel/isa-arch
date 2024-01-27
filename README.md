@@ -1,4 +1,4 @@
-<h1 align="left">I.S.A React</h1>
+<h1 align="left">React I.S.A</h1>
 
 <!-- 
   Se você quiser replicar a funcionalidade de trocar de idioma, basta criar um novo README na raíz do repositório e linkar no README principal.
@@ -24,19 +24,19 @@ O React I.S.A é uma arquitetura para React que separa o código em três camada
 
 Com isso, se torna mais fácil a organização do código e sua manutenção. Vamos explicar um pouco mais sobre cada camada (apesar de ser bem intuitivo):
 
-#### Interface
+### Interface
 
 A camada **Interface** é responsável por renderizar a interface do usuário (UI). Sendo composta por tudo que representa os elementos visuais da aplicação.
 
-#### Estados
+### Estados
 
 A camada **Estados** é responsável por armazenar os dados da aplicação. Sendo composto por classes React ou estados gerenciados via Context API, Reducers e bibliotecas como o Zustand.
 
-#### Ações
+### Ações
 
 A camada **Ações** é responsável por realizar as alterações nos estados da aplicação. Ela é basicamente composta por funções que fazem algo: disparam eventos, validam formulários, alteram o valor de um estado, etc.
 
-### Por que o React I.S.A?
+## Por que o React I.S.A?
 
 Usar essa arquitetura lhe oferece algumas vantagens, como:
 
@@ -46,7 +46,7 @@ Usar essa arquitetura lhe oferece algumas vantagens, como:
 
 - Testabilidade: O código fica mais fácil de testar, pois cada camada pode ser testada separadamente.
 
-#### Usando o React I.S.A
+### Usando o React I.S.A
 
 Consulte os exemplos presentes na pasta [examples](/src/examples/)!
 
@@ -57,8 +57,11 @@ Exemplos:
 - `isa-with-context-and-reducer/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React (Context API + useReducer)
 - `isa-with-zustand`: Usando a arquitetura I.S.A junto da biblitoeca [Zustand](https://zustand-demo.pmnd.rs/)
 
-#### Uma dose de realidade
+## Uma dose de realidade
 
 A verdade é que aplicar essa arquitetura em um código simples pode deixa-lô bastante complicado sem necessidades, portanto essa arquitetura é pensada e recomendada para features maiores e mais robustas.
 
 Além disso, é recomendável aplicar essa arquitetura junto da arquitetura [bulletproof-react](https://github.com/alan2207/bulletproof-react)
+
+## Contribuindo
+

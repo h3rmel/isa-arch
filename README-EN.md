@@ -1,4 +1,4 @@
-<h1 align="left">I.S.A React</h1>
+<h1 align="left">React I.S.A</h1>
 
 <!-- 
   If you want to replicate the feature of multi language, simply create a new README file on the root of repository and link to the main README.
@@ -36,7 +36,7 @@ The **States** layer is responsible for storing the application data. It is comp
 
 The **Actions** layer is responsible for making changes to the application states. It is basically composed of functions that do something: trigger events, validate forms, change the value of a state, etc.
 
-### Why React I.S.A?
+## Why React I.S.A?
 
 Using this architecture offers you some advantages, such as:
 
@@ -57,8 +57,10 @@ Summary:
 - `isa-with-context-and-reducer/`: Using the I.S.A architecture and only tools present in React itself (Context API + useReducer)
 - `isa-with-zustand`: Utilizing the I.S.A architecture and the [Zustand](https://zustand-demo.pmnd.rs/) library
 
-### A dose of reality
+## A dose of reality
 
 The truth is that applying this architecture to simple code can make it quite complicated unnecessarily, so this architecture is designed and recommended for larger and more robust features.
 
 Additionally, it is advisable to apply this architecture along with the [bulletproof-react](https://github.com/alan2207/bulletproof-react) architecture.
+
+## Contributing
