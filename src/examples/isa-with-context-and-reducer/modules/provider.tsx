@@ -1,13 +1,15 @@
 // #region Imports
 
-import { GenericContextProps } from "@/types/global";
+import { ReactNode } from 'react';
 
-import { PostsActionsProvider } from "./actions";
-import { PostsStatesProvider } from "./states";
+import { GenericContextProps } from '@/types/global';
+
+import { PostsActionsProvider } from './actions';
+import { PostsStatesProvider } from './states';
 
 // #endregion
 
-export function PostsProvider({ children }: GenericContextProps) {
+export function PostsProvider({ children }: GenericContextProps): ReactNode {
   return (
     <PostsStatesProvider>
       <PostsActionsProvider>{children}</PostsActionsProvider>

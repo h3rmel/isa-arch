@@ -2,9 +2,16 @@
 /* eslint-disable react-refresh/only-export-components */
 // #region Imports
 
-import { Dispatch, createContext, useContext, useReducer } from "react";
+import {
+  Context,
+  Dispatch,
+  ReactNode,
+  createContext,
+  useContext,
+  useReducer,
+} from 'react';
 
-import { GenericContextProps } from "@/types/global";
+import { GenericContextProps } from '@/types/global';
 
 // #endregion
 
@@ -28,9 +35,8 @@ export interface PostsStates {
 
 // #endregion
 
-export const PostsStatesContext = createContext<PostsStatesContextProps>(
-  {} as PostsStatesContextProps
-);
+export const PostsStatesContext: Context<PostsStatesContextProps> =
+  createContext<PostsStatesContextProps>({} as PostsStatesContextProps);
 
 // #region Reducer
 
@@ -39,16 +45,16 @@ const initialState: PostsStates = {
   isLoading: true,
 };
 
-function postsReducer(state: PostsStates, action: any) {
+function postsReducer(state: PostsStates, action: any): PostsStates {
   switch (action.type) {
-    case "SET_LOADING_TRUE":
+    case 'SET_LOADING_TRUE':
       return { ...state, isLoading: true };
-    case "SET_POSTS_PAYLOAD":
+    case 'SET_POSTS_PAYLOAD':
       return {
         ...state,
         posts: action.payload,
       };
-    case "SET_LOADING_FALSE":
+    case 'SET_LOADING_FALSE':
       return {
         ...state,
         isLoading: false,
@@ -60,7 +66,9 @@ function postsReducer(state: PostsStates, action: any) {
 
 // #endregion
 
-export function PostsStatesProvider({ children }: GenericContextProps) {
+export function PostsStatesProvider({
+  children,
+}: GenericContextProps): ReactNode {
   const [states, dispatch] = useReducer(postsReducer, initialState);
 
   const providerValue: PostsStatesContextProps = {
@@ -75,11 +83,11 @@ export function PostsStatesProvider({ children }: GenericContextProps) {
   );
 }
 
-export function usePostsStates() {
-  const context = useContext(PostsStatesContext);
+export function usePostsStates(): PostsStatesContextProps {
+  const context: PostsStatesContextProps = useContext(PostsStatesContext);
 
   if (!context)
-    throw new Error("usePostsStates must be used within a PostsStatesProvider");
+    throw new Error('usePostsStates must be used within a PostsStatesProvider');
 
   return context;
 }

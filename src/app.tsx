@@ -1,9 +1,12 @@
-import {
-  PostsView,
-  PostsProvider,
-} from "./examples/isa-with-zustand";
+// #region Imports
 
-export function App() {
+import { ReactNode } from 'react';
+
+import { PostsView, PostsProvider } from '@/examples/isa-with-zustand';
+
+// #endregion
+
+export function App(): ReactNode {
   return (
     <PostsProvider>
       <main className="container mt-4 flex justify-center">

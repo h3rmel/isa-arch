@@ -2,27 +2,35 @@
 /* eslint-disable react-refresh/only-export-components */
 // #region Imports
 
-import { createContext, useContext, useEffect } from "react";
+import {
+  Context,
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+} from 'react';
 
-import { AxiosError } from "axios";
+import { AxiosError } from 'axios';
 
-import { api } from "@/services/api";
-import { GenericContextProps } from "@/types/global";
+import { api } from '@/services/api';
+import { GenericContextProps } from '@/types/global';
 
-import { Post, PostsStatesContext } from "./states";
+import { Post, PostsStatesContext } from './states';
 
 // #endregion
 
-export const PostsActionsContext = createContext({});
+export const PostsActionsContext: Context<object> = createContext({});
 
-export function PostsActionsProvider({ children }: GenericContextProps) {
+export function PostsActionsProvider({
+  children,
+}: GenericContextProps): ReactNode {
   const { setIsLoading, setPosts } = useContext(PostsStatesContext);
 
-  async function getPosts(abort: AbortController) {
+  async function getPosts(abort: AbortController): Promise<void> {
     setIsLoading(true);
 
     try {
-      const { data } = await api.get<Post[]>("posts/", {
+      const { data } = await api.get<Post[]>('posts/', {
         signal: abort.signal,
       });
 
@@ -31,7 +39,7 @@ export function PostsActionsProvider({ children }: GenericContextProps) {
 
       setPosts(formattedData);
     } catch (error) {
-      if (abort.signal.aborted) console.log("The user aborted the request.");
+      if (abort.signal.aborted) console.log('The user aborted the request.');
 
       const axiosError = error as AxiosError;
 
@@ -66,12 +74,12 @@ export function PostsActionsProvider({ children }: GenericContextProps) {
   );
 }
 
-export function usePostsActions() {
+export function usePostsActions(): object {
   const context = useContext(PostsActionsContext);
 
   if (!context)
     throw new Error(
-      "usePostsActions must be used within a PostsActionsProvider"
+      'usePostsActions must be used within a PostsActionsProvider',
     );
 
   return context;

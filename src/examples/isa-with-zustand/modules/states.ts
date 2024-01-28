@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { create } from 'zustand';
+import { StoreApi, UseBoundStore, create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 // #region Interfaces & Types
@@ -20,14 +20,16 @@ interface PostsStates {
 
 // #endregion
 
-export const usePostsStore = create<PostsStates>(
-  persist(
-    (set): PostsStates => ({
-      posts: [],
-      isLoading: false,
-      setPosts: (newPosts: Post[]) => set({ posts: newPosts }),
-      setIsLoading: (newIsLoading: boolean) => set({ isLoading: newIsLoading }),
-    }),
-    { name: 'posts' },
-  ) as any,
-);
+export const usePostsStore: UseBoundStore<StoreApi<PostsStates>> =
+  create<PostsStates>(
+    persist(
+      (set): PostsStates => ({
+        posts: [],
+        isLoading: false,
+        setPosts: (newPosts: Post[]) => set({ posts: newPosts }),
+        setIsLoading: (newIsLoading: boolean) =>
+          set({ isLoading: newIsLoading }),
+      }),
+      { name: 'posts' },
+    ) as any,
+  );

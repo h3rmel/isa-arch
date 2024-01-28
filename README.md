@@ -1,6 +1,6 @@
 <h1 align="left">React I.S.A</h1>
 
-<!-- 
+<!--
   Se você quiser replicar a funcionalidade de trocar de idioma, basta criar um novo README na raíz do repositório e linkar no README principal.
  -->
 <table align="right">
@@ -64,4 +64,3 @@ A verdade é que aplicar essa arquitetura em um código simples pode deixa-lô b
 Além disso, é recomendável aplicar essa arquitetura junto da arquitetura [bulletproof-react](https://github.com/alan2207/bulletproof-react)
 
 ## Contribuindo
-

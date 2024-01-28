@@ -1,6 +1,6 @@
 // #region Imports
 
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { AxiosError } from 'axios';
 
@@ -15,11 +15,11 @@ type Post = {
   userId: number;
 };
 
-export function Posts() {
+export function Posts(): ReactNode {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  async function getPosts(abort: AbortController) {
+  async function getPosts(abort: AbortController): Promise<void> {
     setIsLoading(true);
 
     try {
@@ -28,7 +28,7 @@ export function Posts() {
       setPosts(data);
     } catch (error) {
       if (abort.signal.aborted) console.log('The user aborted the request.');
-      
+
       const axiosError = error as AxiosError;
 
       if (axiosError)
@@ -57,14 +57,19 @@ export function Posts() {
     <>
       {!isLoading ? (
         <section className="flex flex-col items-center gap-4">
-          {posts.map((post: Post) => (
-            <article key={post.id} className="card w-96 bg-base-100 shadow-xl">
-              <div className="card-body">
-                <h2 className="card-title">{post.title}</h2>
-                <p>{post.body}</p>
-              </div>
-            </article>
-          ))}
+          {posts.map(
+            (post: Post): ReactNode => (
+              <article
+                key={post.id}
+                className="card w-96 bg-base-100 shadow-xl"
+              >
+                <div className="card-body">
+                  <h2 className="card-title">{post.title}</h2>
+                  <p>{post.body}</p>
+                </div>
+              </article>
+            ),
+          )}
         </section>
       ) : (
         <span className="loading loading-infinity loading-lg"></span>

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // #region Imports
 
-import { createContext, useEffect } from 'react';
+import { Context, ReactNode, createContext, useEffect } from 'react';
 
 import { AxiosError } from 'axios';
 
@@ -12,12 +12,12 @@ import { Post, usePostsStore } from './states';
 
 // #endregion
 
-export const PostsActionsContext = createContext({});
+export const PostsActionsContext: Context<object> = createContext({});
 
-function PostsActionsProvider({ children }: GenericContextProps) {
+function PostsActionsProvider({ children }: GenericContextProps): ReactNode {
   const { setIsLoading, setPosts } = usePostsStore();
 
-  async function getPosts(abort: AbortController) {
+  async function getPosts(abort: AbortController): Promise<void> {
     setIsLoading(true);
 
     try {

@@ -1,9 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
 // #region Imports
 
-import { createContext, useContext, useState } from "react";
+import { Context, ReactNode, createContext, useContext, useState } from 'react';
 
-import { GenericContextProps } from "@/types/global";
+import { GenericContextProps } from '@/types/global';
 
 // #endregion
 
@@ -25,11 +25,12 @@ export interface PostsStatesContextProps {
 
 // #endregion
 
-export const PostsStatesContext = createContext<PostsStatesContextProps>(
-  {} as PostsStatesContextProps
-);
+export const PostsStatesContext: Context<PostsStatesContextProps> =
+  createContext<PostsStatesContextProps>({} as PostsStatesContextProps);
 
-export function PostsStatesProvider({ children }: GenericContextProps) {
+export function PostsStatesProvider({
+  children,
+}: GenericContextProps): ReactNode {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -47,11 +48,11 @@ export function PostsStatesProvider({ children }: GenericContextProps) {
   );
 }
 
-export function usePostsStates() {
-  const context = useContext(PostsStatesContext);
+export function usePostsStates(): PostsStatesContextProps {
+  const context: PostsStatesContextProps = useContext(PostsStatesContext);
 
   if (!context)
-    throw new Error("usePostsStates must be used within a PostsStatesProvider");
+    throw new Error('usePostsStates must be used within a PostsStatesProvider');
 
   return context;
 }

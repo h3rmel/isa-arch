@@ -1,10 +1,10 @@
 // #region Imports
 
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 
-import path from "path";
+import path from 'path';
 
-import react from "@vitejs/plugin-react";
+import react from '@vitejs/plugin-react';
 
 // #endregion
 
@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 });

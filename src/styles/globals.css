@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-    .container {
-        @apply max-w-7xl w-full mx-auto;
-    }
+  .container {
+    @apply max-w-7xl w-full mx-auto;
+  }
 }
