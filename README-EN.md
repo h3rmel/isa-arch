@@ -64,3 +64,7 @@ The truth is that applying this architecture to simple code can make it quite co
 Additionally, it is advisable to apply this architecture along with the [bulletproof-react](https://github.com/alan2207/bulletproof-react) architecture.
 
 ## Contributing
+
+Do you have any contribution to the project? Create a PR! It could be some improvement in the code, new example to be added and etc.
+
+It's necessary 2 approves and a review from a code owner to the PR be merged.

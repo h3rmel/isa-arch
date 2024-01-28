@@ -64,3 +64,7 @@ A verdade é que aplicar essa arquitetura em um código simples pode deixa-lô b
 Além disso, é recomendável aplicar essa arquitetura junto da arquitetura [bulletproof-react](https://github.com/alan2207/bulletproof-react)
 
 ## Contribuindo
+
+Tem alguma contribuição para o projeto? Só criar uma PR com ela: Seja alguma melhoria no código, novo exemplo a ser adicionado e afins.
+
+É necessário 2 *approves* além de uma review de um *code owner* para o PR ser mergeado.
