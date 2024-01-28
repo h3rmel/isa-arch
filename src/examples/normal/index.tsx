@@ -15,7 +15,7 @@ type Post = {
   userId: number;
 };
 
-export function Posts(): ReactNode {
+export function PostsView(): ReactNode {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 

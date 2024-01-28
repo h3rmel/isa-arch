@@ -2,6 +2,9 @@
 
 import { ReactNode } from 'react';
 
+// import { PostsView } from '@/examples/normal';
+// import { PostsView, PostsProvider } from '@/examples/isa-with-context';
+// import { PostsView, PostsProvider } from '@/examples/isa-with-context-and-reducer';
 import { PostsView, PostsProvider } from '@/examples/isa-with-zustand';
 
 // #endregion
