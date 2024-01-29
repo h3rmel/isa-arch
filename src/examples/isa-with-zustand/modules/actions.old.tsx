@@ -1,15 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // #region Imports
 
+import { Context, ReactNode, createContext, useEffect } from 'react';
+
 import { AxiosError } from 'axios';
 
 import { api } from '@/services/api';
+import { GenericContextProps } from '@/types/global';
 
 import { Post, usePostsStore } from './states';
 
 // #endregion
 
-export function usePostsActions() {
+export const PostsActionsContext: Context<object> = createContext({});
+
+function PostsActionsProvider({ children }: GenericContextProps): ReactNode {
   const { setIsLoading, setPosts } = usePostsStore();
 
   async function getPosts(abort: AbortController): Promise<void> {
@@ -41,5 +46,23 @@ export function usePostsActions() {
     }
   }
 
-  return { getPosts };
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    getPosts(abortController);
+
+    return () => {
+      abortController.abort();
+    };
+  }, []);
+
+  const providerValue = {};
+
+  return (
+    <PostsActionsContext.Provider value={providerValue}>
+      {children}
+    </PostsActionsContext.Provider>
+  );
 }
+
+export { PostsActionsProvider as PostsProvider };

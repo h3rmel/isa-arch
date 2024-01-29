@@ -1,9 +1,22 @@
-import { ReactNode } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { ReactNode, useEffect } from 'react';
 
+import { usePostsActions } from './actions';
 import { Post, usePostsStore } from './states';
 
 export function PostsView(): ReactNode {
   const { isLoading, posts } = usePostsStore();
+  const { getPosts } = usePostsActions();
+
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    getPosts(abortController);
+
+    return () => {
+      abortController.abort();
+    };
+  }, []);
 
   return (
     <>
