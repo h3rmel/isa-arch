@@ -19,7 +19,7 @@ export function PostsView(): ReactNode {
   }, []);
 
   return (
-    <>
+    <main className="container mt-4 flex justify-center">
       {!isLoading ? (
         <section className="flex flex-col items-center gap-4">
           {posts.map(
@@ -39,6 +39,6 @@ export function PostsView(): ReactNode {
       ) : (
         <span className="loading loading-infinity loading-lg"></span>
       )}
-    </>
+    </main>
   );
 }

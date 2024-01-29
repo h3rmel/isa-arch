@@ -1,11 +1,14 @@
 import { ReactNode } from 'react';
 
-import { PostsView } from '@/examples/isa-with-zustand';
+// #region Examples
+
+// import { NormalExample } from '@/examples/normal';
+// import { ContextExample } from '@/examples/isa-with-context';
+// import { ContextReducerExample } from '@/examples/isa-with-context-and-reducer';
+import { ZustandExample } from '@/examples/isa-with-zustand';
+
+// #endregion
 
 export function App(): ReactNode {
-  return (
-    <main className="container mt-4 flex justify-center">
-      <PostsView />
-    </main>
-  );
+  return <ZustandExample />;
 }
