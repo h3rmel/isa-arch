@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Post, usePostsStates } from './states';
+import { Post, usePostsStates } from './posts.states';
 
 export function PostsView(): ReactNode {
   const { isLoading, posts } = usePostsStates();
