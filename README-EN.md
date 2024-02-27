@@ -53,6 +53,7 @@ Check out the examples in the [examples](/src/examples/) folder!
 Summary:
 
 - `normal/`: Conventional way of creating a component
+- `isa-dot-pattern-files`: Conventional way, but using the dot pattern for the files names
 - `isa-with-context/`: Using the I.S.A architecture and only tools present in React itself (Context API)
 - `isa-with-context-and-reducer/`: Using the I.S.A architecture and only tools present in React itself (Context API + useReducer)
 - `isa-with-zustand`: Utilizing the I.S.A architecture and the [Zustand](https://zustand-demo.pmnd.rs/) library
