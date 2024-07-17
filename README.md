@@ -1,71 +1,64 @@
-<h1 align="left">React I.S.A</h1>
+# React I.S.A 
 
-<!--
-  Se você quiser replicar a funcionalidade de trocar de idioma, basta criar um novo README na raíz do repositório e linkar no README principal.
- -->
-<table align="right">
-  <tr>
-    <td>
-      <strong>
-        <a href="README.md">Português</a>
-      </strong>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>
-        <a href="README-EN.md">Inglês</a>
-      </strong>
-    </td>
-  </tr>
-</table>
+<!-- Badges from: https://github.com/Ileriayo/markdown-badges -->
 
-O React I.S.A é uma arquitetura para React que separa o código em três camadas: Interface (I), Estados (S) e Ações (A)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+[![License](https://img.shields.io/github/license/k4mome/front-flow?style=for-the-badge)](./LICENSE)
 
-Com isso, se torna mais fácil a organização do código e sua manutenção. Vamos explicar um pouco mais sobre cada camada (apesar de ser bem intuitivo):
+An architecture for React that separates the code into three layers: Interface (I), States (S), and Actions (A). 
+
+This makes it easier to organize and maintain the code. Let's explain a little more about each layer (although it is very intuitive):
 
 ### Interface
 
-A camada **Interface** é responsável por renderizar a interface do usuário (UI). Sendo composta por tudo que representa os elementos visuais da aplicação.
+The **Interface** layer is responsible for rendering the user interface (UI). It is composed of everything that represents the visual elements of the application.
 
-### Estados
+### States
 
-A camada **Estados** é responsável por armazenar os dados da aplicação. Sendo composto por classes React ou estados gerenciados via Context API, Reducers e bibliotecas como o Zustand.
+The **States** layer is responsible for storing the application data. It is composed of React classes or states managed via Context API, Reducers, and libraries such as Zustand.
 
-### Ações
+### Actions
 
-A camada **Ações** é responsável por realizar as alterações nos estados da aplicação. Ela é basicamente composta por funções que fazem algo: disparam eventos, validam formulários, alteram o valor de um estado, etc.
+The **Actions** layer is responsible for making changes to the application states. It is basically composed of functions that do something: trigger events, validate forms, change the value of a state, etc.
 
-## Por que o React I.S.A?
+## Why React I.S.A?
 
-Usar essa arquitetura lhe oferece algumas vantagens, como:
+Using this architecture offers you some advantages, such as:
 
-- Organização: Por se tratar de uma arquitetura em camadas, o código se torna mais organizado e fácil de entender, pois cada camada é responsável por uma função específica.
+- Organization: Because it is a layered architecture, the code becomes more organized and easier to understand, as each layer is responsible for a specific function.
 
-- Manutenção: O código fica mais fácil de manter, pois é mais fácil de rastrear os efeitos que uma camada exerce na outra.
+- Maintenance: The code is easier to maintain because it is easier to track the effects that one layer has on another.
 
-- Testabilidade: O código fica mais fácil de testar, pois cada camada pode ser testada separadamente.
+- Testability: The code is easier to test because each layer can be tested separately.
 
-### Usando o React I.S.A
+### Using React I.S.A
 
-Consulte os exemplos presentes na pasta [examples](/src/examples/)!
+Check out the examples in the [examples](/src/examples/) folder!
 
-Exemplos:
+Summary:
 
-- `normal/`: Jeito convencional de se criar um componente
-- `isa-dot-pattern-files`: Jeito convencional mas utilizando do *dot pattern* para os nomes dos arquivos
-- `isa-with-context/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React (Context API)
-- `isa-with-context-and-reducer/`: Utilizando a arquitetura I.S.A e apenas ferramentas presentes no próprio React (Context API + useReducer)
-- `isa-with-zustand`: Usando a arquitetura I.S.A junto da biblitoeca [Zustand](https://zustand-demo.pmnd.rs/)
+- `normal/`: Conventional way of creating a component
+- `isa-dot-pattern-files`: Conventional way, but using the dot pattern for the files names
+- `isa-with-context/`: Using the I.S.A architecture and only tools present in React itself (Context API)
+- `isa-with-context-and-reducer/`: Using the I.S.A architecture and only tools present in React itself (Context API + useReducer)
+- `isa-with-zustand`: Utilizing the I.S.A architecture and the [Zustand](https://zustand-demo.pmnd.rs/) library
 
-## Uma dose de realidade
+## A dose of reality
 
-A verdade é que aplicar essa arquitetura em um código simples pode deixa-lô bastante complicado sem necessidades, portanto essa arquitetura é pensada e recomendada para features maiores e mais robustas.
+The truth is that applying this architecture to simple code can make it quite complicated unnecessarily, so this architecture is designed and recommended for larger and more robust features.
 
-Além disso, é recomendável aplicar essa arquitetura junto da arquitetura [bulletproof-react](https://github.com/alan2207/bulletproof-react)
+Additionally, it is advisable to apply this architecture along with the [bulletproof-react](https://github.com/alan2207/bulletproof-react) architecture.
 
-## Contribuindo
+## Contributing
 
-Tem alguma contribuição para o projeto? Só criar uma PR com ela: Seja alguma melhoria no código, novo exemplo a ser adicionado e afins.
+Contributions are always welcome! If you have any ideas, suggestions, fixes, feel free to contribute. You can do that by going through the following steps:
 
-É necessário 2 *approves* além de uma review de um *code owner* para o PR ser mergeado.
+1. Clone this repo
+2. Create a branch: git checkout -b your-feature
+3. Make some changes
+4. Test your changes
+5. Push your branch and open a Pull Request
+
+## License
+
+[MIT](LICENSE)
