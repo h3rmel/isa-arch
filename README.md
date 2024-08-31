@@ -1,9 +1,11 @@
 # React I.S.A 
 
-<!-- Badges from: https://github.com/Ileriayo/markdown-badges -->
+![](public/react-isa.png)
+
+---
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-[![License](https://img.shields.io/github/license/k4mome/front-flow?style=for-the-badge)](./LICENSE)
+[![License](https://img.shields.io/github/license/h3rmel/front-hub?style=for-the-badge)](./LICENSE)
 
 An architecture for React that separates the code into three layers: Interface (I), States (S), and Actions (A). 
 
